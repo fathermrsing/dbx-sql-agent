@@ -1,0 +1,50 @@
+{
+  "$schema": "https://raw.githubusercontent.com/t8y2/dbx/main/plugins/manifest.schema.json",
+  "manifest_version": 1,
+  "id": "io.github.fathermrsing.sql-agent",
+  "name": "SQL Server Agent Manager",
+  "version": "0.1.3",
+  "publisher": "fathermrsing",
+  "description": "SQL Server Agent 作业、步骤、计划与历史管理。需显式授权 DBX MCP。开发预览。",
+  "icon": "assets/plugin.svg",
+  "engines": {
+    "host_api": "^1.4"
+  },
+  "permissions": [
+    "host.connections:read",
+    "host.events",
+    "host.storage"
+  ],
+  "entrypoints": {
+    "backend": {
+      "executable": "bin/sql-agent",
+      "transport": "stdio-jsonl",
+      "protocol_versions": [
+        1
+      ]
+    },
+    "ui": {
+      "root": "ui",
+      "entry": "ui/index.html"
+    }
+  },
+  "contributions": [
+    {
+      "type": "workbench",
+      "id": "io.github.fathermrsing.sql-agent.main",
+      "label": "SQL Server Agent"
+    },
+    {
+      "type": "context-menu",
+      "id": "io.github.fathermrsing.sql-agent.publish",
+      "label": "SQL Server Agent",
+      "menu": "connection",
+      "action": {
+        "type": "open-workbench",
+        "workbench": "io.github.fathermrsing.sql-agent.main"
+      }
+    }
+  ],
+  "source": "https://github.com/fathermrsing/dbx-sql-agent",
+  "homepage": "https://github.com/fathermrsing/dbx-sql-agent"
+}

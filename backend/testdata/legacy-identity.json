@@ -1,0 +1,12 @@
+{
+  "resultType": "complete",
+  "content": [{"type":"text","text":"### Statement 1\n| server_name | product_version | edition | database_name | login_name | is_sysadmin | agent_user | agent_reader | agent_operator |\n|---|---|---|---|---|---|---|---|---|\n| SQL-LEGACY-TEST | 10.50.1600.1 | Enterprise Edition (64-bit) | msdb | mock-admin | 1 | 0 | 0 | 0 |\n(1 rows, 463ms)"}],
+  "structuredContent": {"results":[{
+    "columns":["server_name","product_version","edition","database_name","login_name","is_sysadmin","agent_user","agent_reader","agent_operator"],
+    "column_types":["nvarchar","nvarchar","nvarchar","nvarchar","nvarchar","int4","int4","int4","int4"],
+    "column_sortables":[],
+    "rows":[["SQL-LEGACY-TEST","10.50.1600.1","Enterprise Edition (64-bit)","msdb","mock-admin",1,0,0,0]],
+    "affected_rows":0,"execution_time_ms":463,"truncated":false,"session_id":null,"has_more":false,"error_message":"SQL-LEGACY-TEST"
+  }]},
+  "isError":false
+}

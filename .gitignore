@@ -1,0 +1,9 @@
+dist/
+work/
+.DS_Store
+*.log
+*.dbxp
+*.sha256
+.dbx-dev/
+.env
+.env.*
