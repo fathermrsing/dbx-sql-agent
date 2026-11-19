@@ -3,13 +3,21 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
+    inputs:
+      source_ref:
+        description: Source tag or commit to validate
+        required: true
+        default: v0.1.3
 permissions:
   contents: read
 jobs:
   test:
-    runs-on: macos-14
+    runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.source_ref || github.sha }}
       - uses: actions/setup-go@v5
         with:
           go-version: '1.26.1'
